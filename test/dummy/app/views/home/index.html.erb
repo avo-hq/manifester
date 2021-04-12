@@ -1,0 +1,1236 @@
+
+<div id="app" class="flex min-h-screen flex-row h-full">
+  <div class="flex flex-1 w-full">
+    <div class="application-sidebar flex h-full bg-white text-white w-56 z-50 border-r border-gray-300">
+  <div class="flex flex-col w-full">
+    <a class="logo-placeholder h-16 bg-white p-2 flex justify-center" href="/avo/">
+      <img class="h-full" title="Avo" src="/avo-packs/media/images/dadf2db36589607d107d.png" />
+
+</a>
+    <div class="flex-1 flex flex-col justify-between">
+      <div class="tools py-4">
+
+
+        <div class="flex items-center my-2 p-3 text-gray-500 font-bold text-sm -mb-1 leading-none">
+  <div class="w-4"></div> Resources
+</div>
+
+
+        <div class="w-full">
+            <a class="text-gray-800 py-2 px-4 block font-normal hover:bg-gray-100 rounded-md mb-1 mx-3 text-sm leading-none" href="/avo/resources/posts">
+  <div class="w-4"></div> Posts
+</a>
+            <a class="text-gray-800 py-2 px-4 block font-normal hover:bg-gray-100 rounded-md mb-1 mx-3 text-sm leading-none active" aria-current="page" href="/avo/resources/projects">
+  <div class="w-4"></div> Projects
+</a>
+            <a class="text-gray-800 py-2 px-4 block font-normal hover:bg-gray-100 rounded-md mb-1 mx-3 text-sm leading-none" href="/avo/resources/teams">
+  <div class="w-4"></div> Teams
+</a>
+            <a class="text-gray-800 py-2 px-4 block font-normal hover:bg-gray-100 rounded-md mb-1 mx-3 text-sm leading-none" href="/avo/resources/users">
+  <div class="w-4"></div> Users
+</a>
+
+            <div class="flex items-center my-2 p-3 text-gray-500 font-bold text-sm -mb-1 leading-none">
+  <div class="w-4"></div> <span class="translation_missing" title="translation missing: en.avo.tools">Tools</span>
+</div>
+
+
+              <a class="text-gray-800 py-2 px-4 block font-normal hover:bg-gray-100 rounded-md mb-1 mx-3 text-sm leading-none" href="/avo/dashboard">
+  <div class="w-4"></div> Dashboard
+</a>
+
+        </div>
+
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+
+    <div class="flex-1 flex flex-col h-full overflow-auto">
+      <div class="relative bg-white p-2 shadow-md h-16 w-full flex flex-shrink-0 items-center z-50" v-if="layout !== 'blank'">
+        <div class="ml-6">
+          <a class="text-green-600 font-semibold" target="_blank" href="/">Avocadelicious</a>
+
+        </div>
+        <div class="flex-1 flex justify-center">
+          <div class="w-64">
+          </div>
+        </div>
+      </div>
+
+      <div class="content p-8 flex-1 flex flex-col justify-between items-stretch ">
+
+
+        <div class="flex flex-1 flex-col justify-between items-stretch">
+
+  <div  data-component="resources-index">
+  <div class="mb-6">
+    <div>
+      <div class="breadcrumbs">
+        <a href="/avo/dashboard">Dashboard</a><svg xmlns="http://www.w3.org/2000/svg" class="inline-block h-3 stroke-current relative top-[-1px] ml-1" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+</svg>
+Projects
+      </div>
+      <div class="text-2xl tracking-normal font-bold text-gray-800 truncate">
+        Projects
+      </div>
+    </div>
+
+    <div>
+      <div class="flex justify-end space-x-2 mb-6">
+
+
+        <a class="inline-flex flex-grow-0 items-center text-sm font-bold leading-none fill-current whitespace-nowrap transition duration-100 rounded-lg shadow-xl transform transition duration-100 active:translate-x-px active:translate-y-px cursor-pointer disabled:cursor-not-allowed  text-gray-700 bg-white hover:bg-gray-100 disabled:bg-gray-300 p-4" href="/avo/resources/projects/new">
+
+        <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor" class="h-4 mr-1"><path d="M12 4v16m8-8H4"></path></svg>
+ Create new project
+
+</a>
+
+
+      </div>
+    </div>
+  </div>
+
+  <div class="relative bg-white rounded-xl shadow-xl mb-8 py-4">
+        <div class="flex justify-between py-6 min-h-24"
+      data-selected-resources-name="projects"
+      data-selected-resources="[]"
+    >
+      <div class="flex items-center px-6 w-64">
+      </div>
+      <div class="flex justify-end items-center px-6 space-x-3">
+
+
+      </div>
+    </div>
+
+      <div class="w-full overflow-auto flex flex-col">
+        <div class="relative flex-1 flex">
+          <div class="w-full">
+    <table class="w-full px-4 overflow-hidden">
+
+<thead class="bg-blue-gray-100 border-t border-b border-gray-300 pb-1">
+  <th>
+    <!-- Select cell -->
+  </th>
+    <th class="text-left uppercase px-3 py-2 whitespace-nowrap">
+        <a class="flex items-center text-blue-gray-600 tracking-tight leading-tight text-xs font-semibold cursor-pointer" href="/avo/resources/projects?sort_by=id&amp;sort_direction=desc">
+          Id
+
+<svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor" class="inline-block fill-current text-gray-500 relative leading-none min-w-4 min-h-full ml-1 h-4"><path d="M8 9l4-4 4 4m0 6l-4 4-4-4"></path></svg>
+
+
+</a>    </th>
+    <th class="text-left uppercase px-3 py-2 whitespace-nowrap">
+          <div class="flex items-center text-blue-gray-600 tracking-tight leading-tight text-xs font-semibold">
+            Name
+          </div>
+    </th>
+    <th class="text-left uppercase px-3 py-2 whitespace-nowrap">
+          <div class="flex items-center text-blue-gray-600 tracking-tight leading-tight text-xs font-semibold">
+            Status
+          </div>
+    </th>
+    <th class="text-left uppercase px-3 py-2 whitespace-nowrap">
+          <div class="flex items-center text-blue-gray-600 tracking-tight leading-tight text-xs font-semibold">
+            Stage
+          </div>
+    </th>
+    <th class="text-left uppercase px-3 py-2 whitespace-nowrap">
+          <div class="flex items-center text-blue-gray-600 tracking-tight leading-tight text-xs font-semibold">
+            Country
+          </div>
+    </th>
+    <th class="text-left uppercase px-3 py-2 whitespace-nowrap">
+          <div class="flex items-center text-blue-gray-600 tracking-tight leading-tight text-xs font-semibold">
+            Users required
+          </div>
+    </th>
+    <th class="text-left uppercase px-3 py-2 whitespace-nowrap">
+          <div class="flex items-center text-blue-gray-600 tracking-tight leading-tight text-xs font-semibold">
+            Started
+          </div>
+    </th>
+    <th class="text-left uppercase px-3 py-2 whitespace-nowrap">
+          <div class="flex items-center text-blue-gray-600 tracking-tight leading-tight text-xs font-semibold">
+            Files
+          </div>
+    </th>
+
+  <th class="w-24">
+    <!-- Controls cell -->
+  </th>
+</thead>
+
+      <tbody>
+            <tr
+  class="hover:bg-light-blue-50 hover:shadow-row relative z-20 border-b"
+  data-resource-name='projects' data-resource-id='30' data-controller='item-selector'
+>
+  <td class="w-10">
+    <div class="flex justify-center h-full">
+      <input type='checkbox'
+        class='mx-3  w-4 h-4'
+        data-action='input->item-selector#toggle'
+        title='Select item'
+        data-tippy='tooltip'
+      />
+    </div>
+  </td>
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="id" data-field-type="id">
+    <a title="View project" href="/avo/resources/projects/30">30</a>
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="name" data-field-type="text">
+
+  Home Ing
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="status" data-field-type="status">
+
+  <div class="flex flex-shrink-0">
+  <div class="inline-block text-red-700">rejected</div>
+</div>
+
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="stage" data-field-type="badge">
+    —
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="country" data-field-type="country">
+
+    Ethiopia
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="users_required" data-field-type="number">
+
+  47
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="started_at" data-field-type="date_time">
+
+  February 06, 2021 17:17
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="files" data-field-type="files">
+    —
+</td>
+
+  <td class="text-right whitespace-nowrap px-2">
+    <div class="flex items-center justify-end flex-grow-0 h-full w-full">
+      <div class="space-x-2 flex flex-row justify-around w-full">
+    <a title="View project" data-control="show" data-tippy="tooltip" href="/avo/resources/projects/30"><svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor" class="text-gray-400 h-6 hover:text-gray-600"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+</a>
+
+    <a title="Edit project" data-control="edit" data-resource-id="30" data-tippy="tooltip" href="/avo/resources/projects/30/edit"><svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor" class="text-gray-400 h-6 hover:text-gray-600"><path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+</a>
+
+
+    <form action="/avo/resources/projects/30" accept-charset="UTF-8" method="post"><input type="hidden" name="_method" value="delete" /><input type="hidden" name="authenticity_token" value="i7cVPgON42BcXkY+ykXLiVgCSlyXDzJH+LTe+kLIUHV5Ckvbo1YW5mfkVmSo2bLMIKmw6VhznzCwXMCelRpgng==" />
+      <button name="button" type="submit" title="Delete project" data-confirm="Are you sure?" data-control="destroy" data-resource-id="30" data-tippy="tooltip"><svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor" class="text-gray-400 h-6 hover:text-gray-600"><path d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+</button>
+
+
+
+</form></div>
+
+    </div>
+  </td>
+</tr>
+
+            <tr
+  class="hover:bg-light-blue-50 hover:shadow-row relative z-20 border-b"
+  data-resource-name='projects' data-resource-id='29' data-controller='item-selector'
+>
+  <td class="w-10">
+    <div class="flex justify-center h-full">
+      <input type='checkbox'
+        class='mx-3  w-4 h-4'
+        data-action='input->item-selector#toggle'
+        title='Select item'
+        data-tippy='tooltip'
+      />
+    </div>
+  </td>
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="id" data-field-type="id">
+    <a title="View project" href="/avo/resources/projects/29">29</a>
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="name" data-field-type="text">
+
+  Overhold
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="status" data-field-type="status">
+
+  <div class="flex flex-shrink-0">
+  <div class="inline-block text-red-700">rejected</div>
+</div>
+
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="stage" data-field-type="badge">
+    —
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="country" data-field-type="country">
+
+    Bolivia
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="users_required" data-field-type="number">
+
+  52
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="started_at" data-field-type="date_time">
+
+  March 12, 2021 17:17
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="files" data-field-type="files">
+    —
+</td>
+
+  <td class="text-right whitespace-nowrap px-2">
+    <div class="flex items-center justify-end flex-grow-0 h-full w-full">
+      <div class="space-x-2 flex flex-row justify-around w-full">
+    <a title="View project" data-control="show" data-tippy="tooltip" href="/avo/resources/projects/29"><svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor" class="text-gray-400 h-6 hover:text-gray-600"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+</a>
+
+    <a title="Edit project" data-control="edit" data-resource-id="29" data-tippy="tooltip" href="/avo/resources/projects/29/edit"><svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor" class="text-gray-400 h-6 hover:text-gray-600"><path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+</a>
+
+
+    <form action="/avo/resources/projects/29" accept-charset="UTF-8" method="post"><input type="hidden" name="_method" value="delete" /><input type="hidden" name="authenticity_token" value="GlNPWM3BFVRRwxkJnB3WLCiSnsGnUvoJSDQKbqmNkN5WNQ26WjALuIP0Nvh66VjkPz5bN4LKgAK7vjdCaS1E7w==" />
+      <button name="button" type="submit" title="Delete project" data-confirm="Are you sure?" data-control="destroy" data-resource-id="29" data-tippy="tooltip"><svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor" class="text-gray-400 h-6 hover:text-gray-600"><path d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+</button>
+
+
+
+</form></div>
+
+    </div>
+  </td>
+</tr>
+
+            <tr
+  class="hover:bg-light-blue-50 hover:shadow-row relative z-20 border-b"
+  data-resource-name='projects' data-resource-id='28' data-controller='item-selector'
+>
+  <td class="w-10">
+    <div class="flex justify-center h-full">
+      <input type='checkbox'
+        class='mx-3  w-4 h-4'
+        data-action='input->item-selector#toggle'
+        title='Select item'
+        data-tippy='tooltip'
+      />
+    </div>
+  </td>
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="id" data-field-type="id">
+    <a title="View project" href="/avo/resources/projects/28">28</a>
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="name" data-field-type="text">
+
+  Transcof
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="status" data-field-type="status">
+
+  <div class="flex flex-shrink-0">
+  <div class="inline-block">waiting</div>
+    <div class="spinner ml-1"></div>
+</div>
+
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="stage" data-field-type="badge">
+
+  <span class="whitespace-nowrap rounded-md uppercase px-2 py-1 text-xs font-bold block text-center truncate bg-yellow-500 text-white" style="max-width: 120px;">On hold</span>
+
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="country" data-field-type="country">
+
+    Jersey
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="users_required" data-field-type="number">
+
+  30
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="started_at" data-field-type="date_time">
+
+  February 22, 2021 17:17
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="files" data-field-type="files">
+    —
+</td>
+
+  <td class="text-right whitespace-nowrap px-2">
+    <div class="flex items-center justify-end flex-grow-0 h-full w-full">
+      <div class="space-x-2 flex flex-row justify-around w-full">
+    <a title="View project" data-control="show" data-tippy="tooltip" href="/avo/resources/projects/28"><svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor" class="text-gray-400 h-6 hover:text-gray-600"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+</a>
+
+    <a title="Edit project" data-control="edit" data-resource-id="28" data-tippy="tooltip" href="/avo/resources/projects/28/edit"><svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor" class="text-gray-400 h-6 hover:text-gray-600"><path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+</a>
+
+
+    <form action="/avo/resources/projects/28" accept-charset="UTF-8" method="post"><input type="hidden" name="_method" value="delete" /><input type="hidden" name="authenticity_token" value="ZUd8qU/z7bL38/SsL31upwLlx5YYOTrssZVRH35elrV/r+unT24GFnJ2HPi3/iRQiVQuNw383rkUMEFdemJG9w==" />
+      <button name="button" type="submit" title="Delete project" data-confirm="Are you sure?" data-control="destroy" data-resource-id="28" data-tippy="tooltip"><svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor" class="text-gray-400 h-6 hover:text-gray-600"><path d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+</button>
+
+
+
+</form></div>
+
+    </div>
+  </td>
+</tr>
+
+            <tr
+  class="hover:bg-light-blue-50 hover:shadow-row relative z-20 border-b"
+  data-resource-name='projects' data-resource-id='27' data-controller='item-selector'
+>
+  <td class="w-10">
+    <div class="flex justify-center h-full">
+      <input type='checkbox'
+        class='mx-3  w-4 h-4'
+        data-action='input->item-selector#toggle'
+        title='Select item'
+        data-tippy='tooltip'
+      />
+    </div>
+  </td>
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="id" data-field-type="id">
+    <a title="View project" href="/avo/resources/projects/27">27</a>
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="name" data-field-type="text">
+
+  Sonair
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="status" data-field-type="status">
+
+  <div class="flex flex-shrink-0">
+  <div class="inline-block">loading</div>
+    <div class="spinner ml-1"></div>
+</div>
+
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="stage" data-field-type="badge">
+    —
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="country" data-field-type="country">
+
+    Christmas Island
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="users_required" data-field-type="number">
+
+  94
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="started_at" data-field-type="date_time">
+
+  April 30, 2020 17:17
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="files" data-field-type="files">
+    —
+</td>
+
+  <td class="text-right whitespace-nowrap px-2">
+    <div class="flex items-center justify-end flex-grow-0 h-full w-full">
+      <div class="space-x-2 flex flex-row justify-around w-full">
+    <a title="View project" data-control="show" data-tippy="tooltip" href="/avo/resources/projects/27"><svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor" class="text-gray-400 h-6 hover:text-gray-600"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+</a>
+
+    <a title="Edit project" data-control="edit" data-resource-id="27" data-tippy="tooltip" href="/avo/resources/projects/27/edit"><svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor" class="text-gray-400 h-6 hover:text-gray-600"><path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+</a>
+
+
+    <form action="/avo/resources/projects/27" accept-charset="UTF-8" method="post"><input type="hidden" name="_method" value="delete" /><input type="hidden" name="authenticity_token" value="Ud1r2QAsJujZ/e8Q7kZnlYsUs6AwoXsdZc6zyWNfOg8Qk8a0R130RM26OQY7ks0Ku8rj4x3Vb+kI6ARr/YZuKA==" />
+      <button name="button" type="submit" title="Delete project" data-confirm="Are you sure?" data-control="destroy" data-resource-id="27" data-tippy="tooltip"><svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor" class="text-gray-400 h-6 hover:text-gray-600"><path d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+</button>
+
+
+
+</form></div>
+
+    </div>
+  </td>
+</tr>
+
+            <tr
+  class="hover:bg-light-blue-50 hover:shadow-row relative z-20 border-b"
+  data-resource-name='projects' data-resource-id='26' data-controller='item-selector'
+>
+  <td class="w-10">
+    <div class="flex justify-center h-full">
+      <input type='checkbox'
+        class='mx-3  w-4 h-4'
+        data-action='input->item-selector#toggle'
+        title='Select item'
+        data-tippy='tooltip'
+      />
+    </div>
+  </td>
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="id" data-field-type="id">
+    <a title="View project" href="/avo/resources/projects/26">26</a>
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="name" data-field-type="text">
+
+  Ventosanzap
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="status" data-field-type="status">
+
+  <div class="flex flex-shrink-0">
+  <div class="inline-block text-red-700">rejected</div>
+</div>
+
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="stage" data-field-type="badge">
+    —
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="country" data-field-type="country">
+
+    Egypt
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="users_required" data-field-type="number">
+
+  15
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="started_at" data-field-type="date_time">
+
+  July 11, 2020 17:17
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="files" data-field-type="files">
+    —
+</td>
+
+  <td class="text-right whitespace-nowrap px-2">
+    <div class="flex items-center justify-end flex-grow-0 h-full w-full">
+      <div class="space-x-2 flex flex-row justify-around w-full">
+    <a title="View project" data-control="show" data-tippy="tooltip" href="/avo/resources/projects/26"><svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor" class="text-gray-400 h-6 hover:text-gray-600"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+</a>
+
+    <a title="Edit project" data-control="edit" data-resource-id="26" data-tippy="tooltip" href="/avo/resources/projects/26/edit"><svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor" class="text-gray-400 h-6 hover:text-gray-600"><path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+</a>
+
+
+    <form action="/avo/resources/projects/26" accept-charset="UTF-8" method="post"><input type="hidden" name="_method" value="delete" /><input type="hidden" name="authenticity_token" value="7JNb1rBnmi19zSOHI6MR82XT+iU4wXAoEHU+ZNIEIpYY0AsV/cHUQruRd0chFr/8G0rcvH6VLJYK/NVHQghYQQ==" />
+      <button name="button" type="submit" title="Delete project" data-confirm="Are you sure?" data-control="destroy" data-resource-id="26" data-tippy="tooltip"><svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor" class="text-gray-400 h-6 hover:text-gray-600"><path d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+</button>
+
+
+
+</form></div>
+
+    </div>
+  </td>
+</tr>
+
+            <tr
+  class="hover:bg-light-blue-50 hover:shadow-row relative z-20 border-b"
+  data-resource-name='projects' data-resource-id='25' data-controller='item-selector'
+>
+  <td class="w-10">
+    <div class="flex justify-center h-full">
+      <input type='checkbox'
+        class='mx-3  w-4 h-4'
+        data-action='input->item-selector#toggle'
+        title='Select item'
+        data-tippy='tooltip'
+      />
+    </div>
+  </td>
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="id" data-field-type="id">
+    <a title="View project" href="/avo/resources/projects/25">25</a>
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="name" data-field-type="text">
+
+  Domainer
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="status" data-field-type="status">
+
+  <div class="flex flex-shrink-0">
+  <div class="inline-block text-red-700">rejected</div>
+</div>
+
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="stage" data-field-type="badge">
+    —
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="country" data-field-type="country">
+
+    Tajikistan
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="users_required" data-field-type="number">
+
+  95
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="started_at" data-field-type="date_time">
+
+  July 22, 2020 17:17
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="files" data-field-type="files">
+    —
+</td>
+
+  <td class="text-right whitespace-nowrap px-2">
+    <div class="flex items-center justify-end flex-grow-0 h-full w-full">
+      <div class="space-x-2 flex flex-row justify-around w-full">
+    <a title="View project" data-control="show" data-tippy="tooltip" href="/avo/resources/projects/25"><svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor" class="text-gray-400 h-6 hover:text-gray-600"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+</a>
+
+    <a title="Edit project" data-control="edit" data-resource-id="25" data-tippy="tooltip" href="/avo/resources/projects/25/edit"><svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor" class="text-gray-400 h-6 hover:text-gray-600"><path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+</a>
+
+
+    <form action="/avo/resources/projects/25" accept-charset="UTF-8" method="post"><input type="hidden" name="_method" value="delete" /><input type="hidden" name="authenticity_token" value="Ec4VASf7jvogXRM+qW5hVyJ9h4jzetJof4/f3p+E4ZzpZFW3GV97Z4aNST/bQ+Wr2OA5Xu5FZd3owrr54PjI1A==" />
+      <button name="button" type="submit" title="Delete project" data-confirm="Are you sure?" data-control="destroy" data-resource-id="25" data-tippy="tooltip"><svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor" class="text-gray-400 h-6 hover:text-gray-600"><path d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+</button>
+
+
+
+</form></div>
+
+    </div>
+  </td>
+</tr>
+
+            <tr
+  class="hover:bg-light-blue-50 hover:shadow-row relative z-20 border-b"
+  data-resource-name='projects' data-resource-id='24' data-controller='item-selector'
+>
+  <td class="w-10">
+    <div class="flex justify-center h-full">
+      <input type='checkbox'
+        class='mx-3  w-4 h-4'
+        data-action='input->item-selector#toggle'
+        title='Select item'
+        data-tippy='tooltip'
+      />
+    </div>
+  </td>
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="id" data-field-type="id">
+    <a title="View project" href="/avo/resources/projects/24">24</a>
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="name" data-field-type="text">
+
+  Zaam-Dox
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="status" data-field-type="status">
+
+  <div class="flex flex-shrink-0">
+  <div class="inline-block text-red-700">rejected</div>
+</div>
+
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="stage" data-field-type="badge">
+
+  <span class="whitespace-nowrap rounded-md uppercase px-2 py-1 text-xs font-bold block text-center truncate bg-yellow-500 text-white" style="max-width: 120px;">On hold</span>
+
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="country" data-field-type="country">
+
+    Finland
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="users_required" data-field-type="number">
+
+  32
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="started_at" data-field-type="date_time">
+
+  August 26, 2020 17:17
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="files" data-field-type="files">
+    —
+</td>
+
+  <td class="text-right whitespace-nowrap px-2">
+    <div class="flex items-center justify-end flex-grow-0 h-full w-full">
+      <div class="space-x-2 flex flex-row justify-around w-full">
+    <a title="View project" data-control="show" data-tippy="tooltip" href="/avo/resources/projects/24"><svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor" class="text-gray-400 h-6 hover:text-gray-600"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+</a>
+
+    <a title="Edit project" data-control="edit" data-resource-id="24" data-tippy="tooltip" href="/avo/resources/projects/24/edit"><svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor" class="text-gray-400 h-6 hover:text-gray-600"><path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+</a>
+
+
+    <form action="/avo/resources/projects/24" accept-charset="UTF-8" method="post"><input type="hidden" name="_method" value="delete" /><input type="hidden" name="authenticity_token" value="SPWzQ4RlV4BZ9Yf9fVIqF3+1cbMmmGEjbSUCGa+qryuDno4UR4wuMrTWpn2B3n2RWs8ie8nTiwzYngP51Y3cQw==" />
+      <button name="button" type="submit" title="Delete project" data-confirm="Are you sure?" data-control="destroy" data-resource-id="24" data-tippy="tooltip"><svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor" class="text-gray-400 h-6 hover:text-gray-600"><path d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+</button>
+
+
+
+</form></div>
+
+    </div>
+  </td>
+</tr>
+
+            <tr
+  class="hover:bg-light-blue-50 hover:shadow-row relative z-20 border-b"
+  data-resource-name='projects' data-resource-id='23' data-controller='item-selector'
+>
+  <td class="w-10">
+    <div class="flex justify-center h-full">
+      <input type='checkbox'
+        class='mx-3  w-4 h-4'
+        data-action='input->item-selector#toggle'
+        title='Select item'
+        data-tippy='tooltip'
+      />
+    </div>
+  </td>
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="id" data-field-type="id">
+    <a title="View project" href="/avo/resources/projects/23">23</a>
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="name" data-field-type="text">
+
+  Tampflex
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="status" data-field-type="status">
+
+  <div class="flex flex-shrink-0">
+  <div class="inline-block text-red-700">closed</div>
+</div>
+
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="stage" data-field-type="badge">
+
+  <span class="whitespace-nowrap rounded-md uppercase px-2 py-1 text-xs font-bold block text-center truncate bg-yellow-500 text-white" style="max-width: 120px;">On hold</span>
+
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="country" data-field-type="country">
+
+    Jordan
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="users_required" data-field-type="number">
+
+  51
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="started_at" data-field-type="date_time">
+
+  June 02, 2020 17:17
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="files" data-field-type="files">
+    —
+</td>
+
+  <td class="text-right whitespace-nowrap px-2">
+    <div class="flex items-center justify-end flex-grow-0 h-full w-full">
+      <div class="space-x-2 flex flex-row justify-around w-full">
+    <a title="View project" data-control="show" data-tippy="tooltip" href="/avo/resources/projects/23"><svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor" class="text-gray-400 h-6 hover:text-gray-600"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+</a>
+
+    <a title="Edit project" data-control="edit" data-resource-id="23" data-tippy="tooltip" href="/avo/resources/projects/23/edit"><svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor" class="text-gray-400 h-6 hover:text-gray-600"><path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+</a>
+
+
+    <form action="/avo/resources/projects/23" accept-charset="UTF-8" method="post"><input type="hidden" name="_method" value="delete" /><input type="hidden" name="authenticity_token" value="MoDIRN2GHRjstqRVekOTHn87PH8uNr7Kqau+FvJCYq/Satz0Ts6s+hVcighmVZYR97K1GVh9zo9N3GT/Kk49JA==" />
+      <button name="button" type="submit" title="Delete project" data-confirm="Are you sure?" data-control="destroy" data-resource-id="23" data-tippy="tooltip"><svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor" class="text-gray-400 h-6 hover:text-gray-600"><path d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+</button>
+
+
+
+</form></div>
+
+    </div>
+  </td>
+</tr>
+
+            <tr
+  class="hover:bg-light-blue-50 hover:shadow-row relative z-20 border-b"
+  data-resource-name='projects' data-resource-id='22' data-controller='item-selector'
+>
+  <td class="w-10">
+    <div class="flex justify-center h-full">
+      <input type='checkbox'
+        class='mx-3  w-4 h-4'
+        data-action='input->item-selector#toggle'
+        title='Select item'
+        data-tippy='tooltip'
+      />
+    </div>
+  </td>
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="id" data-field-type="id">
+    <a title="View project" href="/avo/resources/projects/22">22</a>
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="name" data-field-type="text">
+
+  Sub-Ex
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="status" data-field-type="status">
+
+  <div class="flex flex-shrink-0">
+  <div class="inline-block">running</div>
+    <div class="spinner ml-1"></div>
+</div>
+
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="stage" data-field-type="badge">
+
+  <span class="whitespace-nowrap rounded-md uppercase px-2 py-1 text-xs font-bold block text-center truncate bg-green-500 text-white" style="max-width: 120px;">Done</span>
+
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="country" data-field-type="country">
+
+    Croatia
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="users_required" data-field-type="number">
+
+  87
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="started_at" data-field-type="date_time">
+
+  October 15, 2020 17:17
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="files" data-field-type="files">
+    —
+</td>
+
+  <td class="text-right whitespace-nowrap px-2">
+    <div class="flex items-center justify-end flex-grow-0 h-full w-full">
+      <div class="space-x-2 flex flex-row justify-around w-full">
+    <a title="View project" data-control="show" data-tippy="tooltip" href="/avo/resources/projects/22"><svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor" class="text-gray-400 h-6 hover:text-gray-600"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+</a>
+
+    <a title="Edit project" data-control="edit" data-resource-id="22" data-tippy="tooltip" href="/avo/resources/projects/22/edit"><svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor" class="text-gray-400 h-6 hover:text-gray-600"><path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+</a>
+
+
+    <form action="/avo/resources/projects/22" accept-charset="UTF-8" method="post"><input type="hidden" name="_method" value="delete" /><input type="hidden" name="authenticity_token" value="a4Di2KmLcXJfcSOEK81PWDFmx9ZOCA80rm2nZ4TVuiIBInPVzrOEpNTGiU7CyaY/h7YiTTgRibg0BctvLGJ3BA==" />
+      <button name="button" type="submit" title="Delete project" data-confirm="Are you sure?" data-control="destroy" data-resource-id="22" data-tippy="tooltip"><svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor" class="text-gray-400 h-6 hover:text-gray-600"><path d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+</button>
+
+
+
+</form></div>
+
+    </div>
+  </td>
+</tr>
+
+            <tr
+  class="hover:bg-light-blue-50 hover:shadow-row relative z-20 border-b"
+  data-resource-name='projects' data-resource-id='21' data-controller='item-selector'
+>
+  <td class="w-10">
+    <div class="flex justify-center h-full">
+      <input type='checkbox'
+        class='mx-3  w-4 h-4'
+        data-action='input->item-selector#toggle'
+        title='Select item'
+        data-tippy='tooltip'
+      />
+    </div>
+  </td>
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="id" data-field-type="id">
+    <a title="View project" href="/avo/resources/projects/21">21</a>
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="name" data-field-type="text">
+
+  Biodex
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="status" data-field-type="status">
+
+  <div class="flex flex-shrink-0">
+  <div class="inline-block">loading</div>
+    <div class="spinner ml-1"></div>
+</div>
+
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="stage" data-field-type="badge">
+
+  <span class="whitespace-nowrap rounded-md uppercase px-2 py-1 text-xs font-bold block text-center truncate bg-red-500 text-white" style="max-width: 120px;">Cancelled</span>
+
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="country" data-field-type="country">
+
+    Jamaica
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="users_required" data-field-type="number">
+
+  61
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="started_at" data-field-type="date_time">
+
+  August 31, 2020 17:17
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="files" data-field-type="files">
+    —
+</td>
+
+  <td class="text-right whitespace-nowrap px-2">
+    <div class="flex items-center justify-end flex-grow-0 h-full w-full">
+      <div class="space-x-2 flex flex-row justify-around w-full">
+    <a title="View project" data-control="show" data-tippy="tooltip" href="/avo/resources/projects/21"><svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor" class="text-gray-400 h-6 hover:text-gray-600"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+</a>
+
+    <a title="Edit project" data-control="edit" data-resource-id="21" data-tippy="tooltip" href="/avo/resources/projects/21/edit"><svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor" class="text-gray-400 h-6 hover:text-gray-600"><path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+</a>
+
+
+    <form action="/avo/resources/projects/21" accept-charset="UTF-8" method="post"><input type="hidden" name="_method" value="delete" /><input type="hidden" name="authenticity_token" value="LiPS+qlzTQAR110JB5/SEOxLBd/k1vFYOwz3KrJcH0WvJkuTwoZvLYKm70g5A5IVBHQ6TTboX8Ha+Oq66RoYzw==" />
+      <button name="button" type="submit" title="Delete project" data-confirm="Are you sure?" data-control="destroy" data-resource-id="21" data-tippy="tooltip"><svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor" class="text-gray-400 h-6 hover:text-gray-600"><path d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+</button>
+
+
+
+</form></div>
+
+    </div>
+  </td>
+</tr>
+
+            <tr
+  class="hover:bg-light-blue-50 hover:shadow-row relative z-20 border-b"
+  data-resource-name='projects' data-resource-id='20' data-controller='item-selector'
+>
+  <td class="w-10">
+    <div class="flex justify-center h-full">
+      <input type='checkbox'
+        class='mx-3  w-4 h-4'
+        data-action='input->item-selector#toggle'
+        title='Select item'
+        data-tippy='tooltip'
+      />
+    </div>
+  </td>
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="id" data-field-type="id">
+    <a title="View project" href="/avo/resources/projects/20">20</a>
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="name" data-field-type="text">
+
+  Opela
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="status" data-field-type="status">
+
+  <div class="flex flex-shrink-0">
+  <div class="inline-block text-red-700">closed</div>
+</div>
+
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="stage" data-field-type="badge">
+
+  <span class="whitespace-nowrap rounded-md uppercase px-2 py-1 text-xs font-bold block text-center truncate bg-blue-500 text-white" style="max-width: 120px;">Idea</span>
+
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="country" data-field-type="country">
+
+    Grenada
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="users_required" data-field-type="number">
+
+  17
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="started_at" data-field-type="date_time">
+
+  March 16, 2021 17:17
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="files" data-field-type="files">
+    —
+</td>
+
+  <td class="text-right whitespace-nowrap px-2">
+    <div class="flex items-center justify-end flex-grow-0 h-full w-full">
+      <div class="space-x-2 flex flex-row justify-around w-full">
+    <a title="View project" data-control="show" data-tippy="tooltip" href="/avo/resources/projects/20"><svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor" class="text-gray-400 h-6 hover:text-gray-600"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+</a>
+
+    <a title="Edit project" data-control="edit" data-resource-id="20" data-tippy="tooltip" href="/avo/resources/projects/20/edit"><svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor" class="text-gray-400 h-6 hover:text-gray-600"><path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+</a>
+
+
+    <form action="/avo/resources/projects/20" accept-charset="UTF-8" method="post"><input type="hidden" name="_method" value="delete" /><input type="hidden" name="authenticity_token" value="KdfmqRo53k14+NkOX1++FGb/o+OExnWRVKoVKOU064X8x2okzL+IotqiHB9lrOxg34bdvt8xpDWZspd+V+IpoQ==" />
+      <button name="button" type="submit" title="Delete project" data-confirm="Are you sure?" data-control="destroy" data-resource-id="20" data-tippy="tooltip"><svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor" class="text-gray-400 h-6 hover:text-gray-600"><path d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+</button>
+
+
+
+</form></div>
+
+    </div>
+  </td>
+</tr>
+
+            <tr
+  class="hover:bg-light-blue-50 hover:shadow-row relative z-20 border-b"
+  data-resource-name='projects' data-resource-id='19' data-controller='item-selector'
+>
+  <td class="w-10">
+    <div class="flex justify-center h-full">
+      <input type='checkbox'
+        class='mx-3  w-4 h-4'
+        data-action='input->item-selector#toggle'
+        title='Select item'
+        data-tippy='tooltip'
+      />
+    </div>
+  </td>
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="id" data-field-type="id">
+    <a title="View project" href="/avo/resources/projects/19">19</a>
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="name" data-field-type="text">
+
+  Otcom
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="status" data-field-type="status">
+
+  <div class="flex flex-shrink-0">
+  <div class="inline-block text-red-700">rejected</div>
+</div>
+
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="stage" data-field-type="badge">
+
+  <span class="whitespace-nowrap rounded-md uppercase px-2 py-1 text-xs font-bold block text-center truncate bg-yellow-500 text-white" style="max-width: 120px;">On hold</span>
+
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="country" data-field-type="country">
+
+    Colombia
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="users_required" data-field-type="number">
+
+  85
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="started_at" data-field-type="date_time">
+
+  May 21, 2020 17:17
+
+</td>
+
+    <td class="px-4 py-2 leading-tight whitespace-nowrap h-12 text-blue-gray-800 " data-field-id="files" data-field-type="files">
+    —
+</td>
+
+  <td class="text-right whitespace-nowrap px-2">
+    <div class="flex items-center justify-end flex-grow-0 h-full w-full">
+      <div class="space-x-2 flex flex-row justify-around w-full">
+    <a title="View project" data-control="show" data-tippy="tooltip" href="/avo/resources/projects/19"><svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor" class="text-gray-400 h-6 hover:text-gray-600"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+</a>
+
+    <a title="Edit project" data-control="edit" data-resource-id="19" data-tippy="tooltip" href="/avo/resources/projects/19/edit"><svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor" class="text-gray-400 h-6 hover:text-gray-600"><path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+</a>
+
+
+    <form action="/avo/resources/projects/19" accept-charset="UTF-8" method="post"><input type="hidden" name="_method" value="delete" /><input type="hidden" name="authenticity_token" value="dTcnEdNnFtdtMzQ7Ctn6sfg7On5g04JYn1tlk1FKjl7uCGrnyc/1sWytEs8FcBfOG2WlvU4dMKMyLbchfsbW9g==" />
+      <button name="button" type="submit" title="Delete project" data-confirm="Are you sure?" data-control="destroy" data-resource-id="19" data-tippy="tooltip"><svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor" class="text-gray-400 h-6 hover:text-gray-600"><path d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+</button>
+
+
+
+</form></div>
+
+    </div>
+  </td>
+</tr>
+
+      </tbody>
+    </table>
+</div>
+
+        </div>
+
+          <div class="py-4">
+
+<div class="bg-white px-4 flex items-center justify-between aborder-t aborder-blue-gray-200 sm:px-6 rounded-xl">
+  <div class="hidden sm:flex-2 sm:flex sm:items-center sm:justify-between">
+    <div>
+      <div class="text-sm leading-5 text-blue-gray-600 flex items-center">
+        <div class="mr-2">Displaying items <b>1-12</b> of <b>30</b> in total</div>
+
+        <div data-controller="per-page">
+          <div class="flex items-center">
+            <select name="per_page" id="per_page" class="appearance-none inline-flex bg-blue-gray-100 disabled:bg-blue-gray-400 disabled:cursor-not-allowed focus:bg-white text-blue-gray-700 disabled:text-blue-gray-600 rounded-md py-1 px-2 leading-tight border border-blue-gray-300 outline-none focus:border-blue-gray-400 outline w-16 mr-1 text-sm" data-turbo-frame="none" data-per-page-target="selector" data-action="change-&gt;per-page#reload"><option selected="selected" value="12">12</option>
+<option value="24">24</option>
+<option value="48">48</option>
+<option value="72">72</option></select> per page
+          </div>
+
+              <a class="hidden" data-per-page-option="12" data-turbo-frame="none" href="/avo/resources/projects?per_page=12">Change to 12 items per page</a>
+              <a class="hidden" data-per-page-option="24" data-turbo-frame="none" href="/avo/resources/projects?per_page=24">Change to 24 items per page</a>
+              <a class="hidden" data-per-page-option="48" data-turbo-frame="none" href="/avo/resources/projects?per_page=48">Change to 48 items per page</a>
+              <a class="hidden" data-per-page-option="72" data-turbo-frame="none" href="/avo/resources/projects?per_page=72">Change to 72 items per page</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="flex">
+    <div class="flex-2 sm:flex sm:items-center sm:justify-between">
+        <nav class="pagy-nav pagination" role="navigation" aria-label="pager"><span class="page prev disabled">&lsaquo;&nbsp;Prev</span> <span class="page active">1</span> <span class="page"><a href="/avo/resources/projects?page=2" data-turbo-frame=""  rel="next" >2</a></span> <span class="page"><a href="/avo/resources/projects?page=3" data-turbo-frame=""  >3</a></span> <span class="page next"><a href="/avo/resources/projects?page=2" data-turbo-frame=""  rel="next" aria-label="next">Next&nbsp;&rsaquo;</a></span></nav>
+    </div>
+  </div>
+</div>
+
+          </div>
+      </div>
+
+  </div>
+
+  <div class="relative mb-8">
+
+  </div>
+
+  <div class="flex justify-end w-full">
+    <div>
+
+    </div>
+  </div>
+</div>
+
+
+
+          <div class="text-center text-sm text-gray-700">
+  <a href="https://avohq.io/" target="_blank">Avo</a> · &copy; 2021 AvoHQ · v1.2.6
+</div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <turbo-frame id="actions_show"></turbo-frame>
+  <turbo-frame id="attach_modal"></turbo-frame>
+  <turbo-frame id="destroy_attachment_form"></turbo-frame>
+
+  <turbo-frame id="alerts">
+</turbo-frame></div>

@@ -6,10 +6,11 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%#= stylesheet_link_tag 'application', media: 'all' %>
+    <%= stylesheet_manifest_tag "application", media: "all" %>
   </head>
 
-  <body>
+  <body class="bg-blue-gray-200">
     <%= yield %>
   </body>
 </html>
