@@ -1,4 +1,8 @@
+require "zeitwerk"
 require "manifester/version"
+
+loader = Zeitwerk::Loader.for_gem
+loader.setup
 
 module Manifester
   extend self
