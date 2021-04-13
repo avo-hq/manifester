@@ -2,6 +2,7 @@ require "zeitwerk"
 require "manifester/version"
 
 loader = Zeitwerk::Loader.for_gem
+loader.push_dir("#{__dir__}/manifester", namespace: Manifester)
 loader.setup
 
 module Manifester
