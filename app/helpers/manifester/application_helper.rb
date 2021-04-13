@@ -4,7 +4,7 @@ module Manifester
       Manifester.instance
     end
 
-    # Computes the relative path for a given Webpacker asset.
+    # Computes the relative path for a given Manifester asset.
     # Returns the relative path using manifest.json and passes it to path_to_asset helper.
     # This will use path_to_asset internally, so most of their behaviors will be the same.
     #
@@ -15,7 +15,7 @@ module Manifester
       path_to_asset(current_manifester_instance.manifest.lookup!(name), options)
     end
 
-    # Computes the absolute path for a given Webpacker asset.
+    # Computes the absolute path for a given Manifester asset.
     # Returns the absolute path using manifest.json and passes it to url_to_asset helper.
     # This will use url_to_asset internally, so most of their behaviors will be the same.
     #
@@ -26,14 +26,14 @@ module Manifester
       url_to_asset(current_manifester_instance.manifest.lookup!(name), options)
     end
 
-    # Computes the relative path for a given Webpacker image with the same automated processing as image_manifest_tag.
+    # Computes the relative path for a given Manifester image with the same automated processing as image_manifest_tag.
     # Returns the relative path using manifest.json and passes it to path_to_asset helper.
     # This will use path_to_asset internally, so most of their behaviors will be the same.
     def image_manifest_path(name, **options)
       resolve_path_to_image(name, **options)
     end
 
-    # Computes the absolute path for a given Webpacker image with the same automated
+    # Computes the absolute path for a given Manifester image with the same automated
     # processing as image_manifest_tag. Returns the relative path using manifest.json
     # and passes it to path_to_asset helper. This will use path_to_asset internally,
     # so most of their behaviors will be the same.
@@ -97,7 +97,7 @@ module Manifester
       javascript_include_tag(*sources_from_manifest_entrypoints(names, type: :javascript), **options)
     end
 
-    # Creates a link tag, for preloading, that references a given Webpacker asset.
+    # Creates a link tag, for preloading, that references a given Manifester asset.
     # In production mode, the digested reference is automatically looked up.
     # See: https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content
     #
