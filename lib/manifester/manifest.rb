@@ -12,7 +12,7 @@ class Manifester::Manifest
     @data = load
   end
 
-  def lookup_pack_with_chunks(name, pack_type = {})
+  def lookup_manifest_with_chunks(name, pack_type = {})
     manifest_pack_type = manifest_type(pack_type[:type])
     manifest_pack_name = manifest_name(name, manifest_pack_type)
     find("entrypoints")[manifest_pack_name]["assets"][manifest_pack_type]
@@ -20,8 +20,8 @@ class Manifester::Manifest
     nil
   end
 
-  def lookup_pack_with_chunks!(name, pack_type = {})
-    lookup_pack_with_chunks(name, pack_type) || handle_missing_entry(name, pack_type)
+  def lookup_manifest_with_chunks!(name, pack_type = {})
+    lookup_manifest_with_chunks(name, pack_type) || handle_missing_entry(name, pack_type)
   end
 
   # Computes the relative path for a given Manifester asset using manifest.json.

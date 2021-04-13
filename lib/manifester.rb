@@ -1,5 +1,4 @@
 require "manifester/version"
-require "manifester/engine"
 
 module Manifester
   extend self
@@ -12,3 +11,10 @@ module Manifester
     @instance ||= Manifester::Instance.new
   end
 end
+
+require "manifester/instance"
+require "manifester/env"
+require "manifester/configuration"
+require "manifester/manifest"
+
+require "manifester/engine" if defined?(Rails)
