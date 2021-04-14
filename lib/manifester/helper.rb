@@ -1,5 +1,5 @@
 module Manifester
-  module ApplicationHelper
+  module Helper
     def current_manifester_instance
       Manifester.instance
     end
@@ -12,6 +12,8 @@ module Manifester
     #
     #   <%= asset_manifest_path 'calendar.css' %> # => "/packs/calendar-1016838bab065ae1e122.css"
     def asset_manifest_path(name, **options)
+      return asset_pack_path(name, **options) if fallback_to_webpacker?
+
       path_to_asset(current_manifester_instance.manifest.lookup!(name), options)
     end
 
@@ -23,6 +25,8 @@ module Manifester
     #
     #   <%= asset_manifest_url 'calendar.css' %> # => "http://example.com/packs/calendar-1016838bab065ae1e122.css"
     def asset_manifest_url(name, **options)
+      return asset_pack_url(name, **options) if fallback_to_webpacker?
+
       url_to_asset(current_manifester_instance.manifest.lookup!(name), options)
     end
 
@@ -30,6 +34,8 @@ module Manifester
     # Returns the relative path using manifest.json and passes it to path_to_asset helper.
     # This will use path_to_asset internally, so most of their behaviors will be the same.
     def image_manifest_path(name, **options)
+      return image_pack_path(name, **options) if fallback_to_webpacker?
+
       resolve_path_to_image(name, **options)
     end
 
@@ -38,6 +44,8 @@ module Manifester
     # and passes it to path_to_asset helper. This will use path_to_asset internally,
     # so most of their behaviors will be the same.
     def image_manifest_url(name, **options)
+      return image_pack_url(name, **options) if fallback_to_webpacker?
+
       resolve_path_to_image(name, **options.merge(protocol: :request))
     end
 
@@ -51,6 +59,8 @@ module Manifester
     #  <%= image_manifest_tag 'picture.png', srcset: { 'picture-2x.png' => '2x' } %>
     #  <img srcset= "/packs/picture-2x-7cca48e6cae66ec07b8e.png 2x" src="/packs/picture-c38deda30895059837cf.png" >
     def image_manifest_tag(name, **options)
+      return image_pack_tag(name, **options) if fallback_to_webpacker?
+
       if options[:srcset] && !options[:srcset].is_a?(String)
         options[:srcset] = options[:srcset].map do |src_name, size|
           "#{resolve_path_to_image(src_name)} #{size}"
@@ -67,6 +77,8 @@ module Manifester
     #  <%= favicon_manifest_tag 'mb-icon.png', rel: 'apple-touch-icon', type: 'image/png' %>
     #  <link href="/packs/mb-icon-k344a6d59eef8632c9d1.png" rel="apple-touch-icon" type="image/png" />
     def favicon_manifest_tag(name, **options)
+      return favicon_pack_tag(name, **options) if fallback_to_webpacker?
+
       favicon_link_tag(resolve_path_to_image(name), options)
     end
 
@@ -94,6 +106,8 @@ module Manifester
     #   <%= javascript_manifest_tag 'calendar' %>
     #   <%= javascript_manifest_tag 'map' %>
     def javascript_manifest_tag(*names, **options)
+      return javascript_pack_tag(*names, **options) if fallback_to_webpacker?
+
       javascript_include_tag(*sources_from_manifest_entrypoints(names, type: :javascript), **options)
     end
 
@@ -106,6 +120,8 @@ module Manifester
     #   <%= preload_manifest_asset 'fonts/fa-regular-400.woff2' %> # =>
     #   <link rel="preload" href="/packs/fonts/fa-regular-400-944fb546bd7018b07190a32244f67dc9.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     def preload_manifest_asset(name, **options)
+      return preload_pack_asset(name, **options) if fallback_to_webpacker?
+
       if self.class.method_defined?(:preload_link_tag)
         preload_link_tag(current_manifester_instance.manifest.lookup!(name), options)
       else
@@ -135,6 +151,8 @@ module Manifester
     #   <%= stylesheet_manifest_tag 'calendar' %>
     #   <%= stylesheet_manifest_tag 'map' %>
     def stylesheet_manifest_tag(*names, **options)
+      return stylesheet_pack_tag(*names, **options) if fallback_to_webpacker?
+
       stylesheet_link_tag(*sources_from_manifest_entrypoints(names, type: :stylesheet), **options)
     end
 
@@ -149,6 +167,10 @@ module Manifester
         path_to_asset(current_manifester_instance.manifest.lookup!(path), options)
       rescue
         path_to_asset(current_manifester_instance.manifest.lookup!(name), options)
+      end
+
+      def fallback_to_webpacker?
+        current_manifester_instance.config.fallback_to_webpacker?
       end
   end
 end

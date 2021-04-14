@@ -5,6 +5,11 @@ loader = Zeitwerk::Loader.for_gem
 loader.push_dir("#{__dir__}/manifester", namespace: Manifester)
 loader.setup
 
+require "manifester/helper"
+require "manifester/instance"
+require "manifester/configuration"
+require "manifester/manifest"
+
 module Manifester
   extend self
 
@@ -16,10 +21,5 @@ module Manifester
     @instance ||= Manifester::Instance.new
   end
 end
-
-require "manifester/instance"
-require "manifester/env"
-require "manifester/configuration"
-require "manifester/manifest"
 
 require "manifester/engine" if defined?(Rails)

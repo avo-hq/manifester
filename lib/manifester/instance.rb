@@ -1,21 +1,19 @@
 class Manifester::Instance
   cattr_accessor(:logger) { ActiveSupport::TaggedLogging.new(ActiveSupport::Logger.new(STDOUT)) }
 
-  attr_reader :root_path, :config_path
+  attr_reader :root_path
 
-  def initialize(root_path: Rails.root, config_path: Rails.root.join("config/manifester.yml"))
-    @root_path, @config_path = root_path, config_path
-  end
-
-  def env
-    @env ||= Manifester::Env.inquire self
+  def initialize(root_path: Rails.root, public_root_dir: "public", public_output_dir: "packs", cache_manifest: false, fallback_to_webpacker: -> {})
+    @root_path, @public_root_dir, @public_output_dir, @cache_manifest, @fallback_to_webpacker = root_path, public_root_dir, public_output_dir, cache_manifest, fallback_to_webpacker
   end
 
   def config
     @config ||= Manifester::Configuration.new(
-      root_path: root_path,
-      config_path: config_path,
-      env: env
+      root_path: @root_path,
+      public_root_dir: @public_root_dir,
+      public_output_dir: @public_output_dir,
+      cache_manifest: @cache_manifest,
+      fallback_to_webpacker: @fallback_to_webpacker
     )
   end
 
