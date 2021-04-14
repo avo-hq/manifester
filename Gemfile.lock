@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    manifester (0.1.6)
+    manifester (0.1.7)
       rails (>= 6.0)
       zeitwerk
 

@@ -5,9 +5,9 @@ Gem::Specification.new do |spec|
   spec.version     = Manifester::VERSION
   spec.authors     = ["Adrian Marin"]
   spec.email       = ["adrian@adrianthedev.com"]
-  spec.homepage    = "https://avohq.io"
-  spec.summary     = "Manifester loads stylesheets and javascript assets from your manifest.json file."
-  spec.description = "Manifester loads stylesheets and javascript assets from your manifest.json file."
+  spec.homepage    = "https://github.com/avo-hq/manifester"
+  spec.summary     = "Manifester loads your webpacker generated assets."
+  spec.description = "Manifester loads your webpacker generated javascript and stylesheets assets from your manifest.json file."
   spec.license     = "MIT"
 
   spec.metadata["homepage_uri"] = spec.homepage

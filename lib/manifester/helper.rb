@@ -108,7 +108,7 @@ module Manifester
     def javascript_manifest_tag(*names, **options)
       return javascript_pack_tag(*names, **options) if fallback_to_webpacker?
 
-      javascript_include_tag(*sources_from_manifest_entrypoints(names, type: :javascript), **options)
+      javascript_include_tag(*manifester_sources_from_manifest_entrypoints(names, type: :javascript), **options)
     end
 
     # Creates a link tag, for preloading, that references a given Manifester asset.
@@ -153,12 +153,12 @@ module Manifester
     def stylesheet_manifest_tag(*names, **options)
       return stylesheet_pack_tag(*names, **options) if fallback_to_webpacker?
 
-      stylesheet_link_tag(*sources_from_manifest_entrypoints(names, type: :stylesheet), **options)
+      stylesheet_link_tag(*manifester_sources_from_manifest_entrypoints(names, type: :stylesheet), **options)
     end
 
     private
 
-      def sources_from_manifest_entrypoints(names, type:)
+      def manifester_sources_from_manifest_entrypoints(names, type:)
         names.map { |name| current_manifester_instance.manifest.lookup_manifest_with_chunks!(name.to_s, type: type) }.flatten.uniq
       end
 
