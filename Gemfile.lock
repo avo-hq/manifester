@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    manifester (0.1.5)
+    manifester (0.1.6)
       rails (>= 6.0)
       zeitwerk
 
@@ -88,6 +88,8 @@ GEM
     nio4r (2.5.7)
     nokogiri (1.11.3)
       mini_portile2 (~> 2.5.0)
+      racc (~> 1.4)
+    nokogiri (1.11.3-x86_64-darwin)
       racc (~> 1.4)
     racc (1.5.2)
     rack (2.2.3)
